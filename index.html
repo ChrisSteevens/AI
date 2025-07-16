@@ -1,54 +1,189 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Website met doorzichtige achtergrond</title>
-<style>
-  /* Body zonder achtergrond of opacity */
-  body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: white;
-  }
-
-  /* Grote doorzichtige achtergrondafbeelding */
-  .background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-image: url('Dolphin.png');
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover; /* Vul heel scherm */
-    opacity: 0.1; /* Maak doorzichtig */
-    pointer-events: none; /* Niet klikbaar */
-    z-index: -1; /* Achter alles */
-  }
-
-  /* Inhoud die leesbaar blijft */
-  .content {
-    position: relative;
-    max-width: 600px;
-    margin: 5rem auto;
-    background-color: rgba(255, 255, 255, 0.95);
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.1);
-  }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bedrijfsnaam - Home</title>
+  <style>
+    /* Reset en basis */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #f9f9f9;
+    }
+    a {
+      text-decoration: none;
+      color: #007BFF;
+    }
+    header {
+      background: #fff;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    header .logo {
+      font-weight: bold;
+      font-size: 1.5rem;
+      color: #007BFF;
+    }
+    nav a {
+      margin-left: 1.5rem;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #0056b3;
+    }
+    .hero {
+      background: #007BFF;
+      color: white;
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    section {
+      padding: 3rem 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+      background: white;
+      margin-bottom: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.05);
+    }
+    h2 {
+      margin-bottom: 1.5rem;
+      color: #007BFF;
+    }
+    ul.services-list {
+      list-style: none;
+    }
+    ul.services-list li {
+      margin-bottom: 1rem;
+      padding-left: 1rem;
+      position: relative;
+    }
+    ul.services-list li::before {
+      content: "✔";
+      position: absolute;
+      left: 0;
+      color: #007BFF;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+    label {
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+    input, textarea {
+      padding: 0.75rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 1rem;
+      resize: vertical;
+    }
+    button {
+      background: #007BFF;
+      color: white;
+      border: none;
+      padding: 0.75rem;
+      font-size: 1rem;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+    footer {
+      text-align: center;
+      padding: 1.5rem 1rem;
+      background: #f1f1f1;
+      font-size: 0.9rem;
+      color: #666;
+    }
+    @media (max-width: 600px) {
+      nav a {
+        margin-left: 1rem;
+      }
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
 </head>
 <body>
 
-  <div class="background"></div>
+<header>
+  <div class="logo">Bedrijfsnaam</div>
+  <nav>
+    <a href="#over">Over ons</a>
+    <a href="#diensten">Diensten</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
 
-  <div class="content">
-    <h1>Welkom op mijn website</h1>
-    <p>Hier staat tekst en blokken over mijn bedrijf.</p>
-    <p>De dolfijn staat als doorzichtige achtergrond achter deze content.</p>
-  </div>
+<section class="hero">
+  <h1>Welkom bij Bedrijfsnaam</h1>
+  <p>Wij leveren hoogwaardige oplossingen voor jouw bedrijf. Kwaliteit en service staan bij ons voorop.</p>
+</section>
+
+<section id="over">
+  <h2>Over ons</h2>
+  <p>Bedrijfsnaam is al meer dan 10 jaar een betrouwbare partner in de sector. Ons team van experts staat klaar om jouw wensen te realiseren met een persoonlijke aanpak en innovatieve oplossingen.</p>
+</section>
+
+<section id="diensten">
+  <h2>Onze diensten</h2>
+  <ul class="services-list">
+    <li>Advies en consultancy</li>
+    <li>Ontwikkeling op maat</li>
+    <li>Ondersteuning en onderhoud</li>
+  </ul>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <form>
+    <label for="naam">Naam</label>
+    <input type="text" id="naam" name="naam" placeholder="Jouw naam" required>
+
+    <label for="email">E-mail</label>
+    <input type="email" id="email" name="email" placeholder="Jouw e-mail" required>
+
+    <label for="bericht">Bericht</label>
+    <textarea id="bericht" name="bericht" rows="5" placeholder="Schrijf je bericht hier..." required></textarea>
+
+    <button type="submit">Verstuur</button>
+  </form>
+</section>
+
+<footer>
+  &copy; 2025 Bedrijfsnaam. Alle rechten voorbehouden.
+</footer>
 
 </body>
 </html>
