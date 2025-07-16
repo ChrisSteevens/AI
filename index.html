@@ -5,54 +5,50 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Website met doorzichtige achtergrond</title>
 <style>
+  /* Body zonder achtergrond of opacity */
   body {
     margin: 0;
     font-family: Arial, sans-serif;
-    /* Achtergrond met dolfijn */
-    background-image: url('https://raw.githubusercontent.com/ChrisSteevens/Ai/main/Dolphin.png');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain; /* pas aan naar cover als je wilt */
-    /* Doorzichtig maken: */
-    opacity: 0.1; /* Maar dit maakt ook tekst doorzichtig, dus gebruiken we dit niet */
+    background-color: white;
   }
 
-  /* Slimme manier: overlay met transparantie */
+  /* Grote doorzichtige achtergrondafbeelding */
   .background {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-image: url('https://raw.githubusercontent.com/ChrisSteevens/Ai/main/Dolphin.png');
+    background-image: url('Dolphin.png');
     background-repeat: no-repeat;
     background-position: center center;
-    background-size: contain;
-    opacity: 0.1; /* Doorzichtigheid */
-    pointer-events: none; /* Zorgt dat achtergrond niet klikbaar is */
+    background-size: cover; /* Vul heel scherm */
+    opacity: 0.1; /* Maak doorzichtig */
+    pointer-events: none; /* Niet klikbaar */
     z-index: -1; /* Achter alles */
   }
 
+  /* Inhoud die leesbaar blijft */
   .content {
     position: relative;
-    padding: 2rem;
-    background-color: rgba(255, 255, 255, 0.9); /* licht doorschijnend wit blok */
     max-width: 600px;
-    margin: 3rem auto;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin: 5rem auto;
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
   }
 </style>
 </head>
 <body>
 
-<div class="background"></div>
+  <div class="background"></div>
 
-<div class="content">
-  <h1>Welkom op mijn website</h1>
-  <p>Hier staat tekst en blokken over mijn bedrijf.</p>
-  <p>De dolfijn staat als doorzichtige achtergrond achter deze content.</p>
-</div>
+  <div class="content">
+    <h1>Welkom op mijn website</h1>
+    <p>Hier staat tekst en blokken over mijn bedrijf.</p>
+    <p>De dolfijn staat als doorzichtige achtergrond achter deze content.</p>
+  </div>
 
 </body>
 </html>
